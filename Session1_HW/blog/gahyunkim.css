@@ -1,0 +1,38 @@
+a{ text-decoration: none; color: black; }
+
+.body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 15px;
+}
+.wrapper{
+    display:flex;
+}
+
+.box{
+    margin-left:15px;
+    border: solid 3px black;
+    border-radius:70px;
+    background-color:#fff;
+    font-size : 84px;
+    font-family: 'Helvetica', sans-serif;
+    font-weight:500;
+    color: black;
+    opacity:0.95;
+    padding : 15px 30px 15px 30px;
+    text-align:center;
+}
+
+.box:hover{
+    background-color:black;
+    color:#fff;
+}
+
+a:hover{
+    color:azure;
+}
+
+p{
+    display:inline;
+}
