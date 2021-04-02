@@ -25,13 +25,17 @@ a{ text-decoration: none; color: black; }
 }
 
 .box:hover{
-    background-color:black;
-    color:#fff;
+        background-color:black;
 }
-
+.box:hover > a{
+    /* background-color:black; */
+    color: azure;
+    /* color:#fff; */
+}
+/* 
 a:hover{
     color:azure;
-}
+} */
 
 p{
     display:inline;
