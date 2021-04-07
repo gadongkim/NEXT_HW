@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {% load static %}
+        <link rel="stylesheet" type ="text/css" href ="{% static 'result.css'%}"/>
+        <title>result</title>
+    </head>
+
+    <body>
+        <img class = "bg" src = "https://user-images.githubusercontent.com/69626443/113905570-40428f00-980e-11eb-91e3-b03d8c115c78.png" width = "100%" height = "100%">
+        <!-- <div class ="result"> -->
+            <p class ="input">{{text}}</p>
+            <div class = "output">
+                <p>{{total_len}} words<br>{{no_blank_len}} words(no blank)<br>{{word_len}} characters</p>
+            </div>
+        <!-- </div> -->
+        <!-- <p></p> -->
+    </body>
+</html>

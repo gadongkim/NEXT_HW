@@ -1,0 +1,32 @@
+<!-- url.py에서 path로 html을 연결해준다. views.py에서 html을 렌더하는 함수를 지정한다.해당 html을 템플릿 아래에 생성한다.  -->
+<!-- 기존 글자수세는 사이트에서 단어 개수 세는 기능을 추가할 것. CSS로 꾸며볼 것 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {% load static %}
+        <link rel="stylesheet" type ="text/css" href ="{% static 'count.css'%}"/>
+        <title>count</title>
+    </head>
+
+    <body>
+        <!-- <h1>글자를 입력해 보세요!</h1> -->
+        <img class = "bg" src = "https://user-images.githubusercontent.com/69626443/113905570-40428f00-980e-11eb-91e3-b03d8c115c78.png" width = "100%" height = "100%">
+        <div class ="input">
+        <form action ="{% url 'result' %}" method ="post">{% csrf_token %}
+            <textarea class = "area" placeholder="Start typing" name ="text" cols="30" rows ="10" wrap="off"></textarea>
+            <!-- <input class ="area" type ="text" name ="text" autocomplete ="off" required/> -->
+            <br>
+            <input class = "button" type ="submit" value="&#10035;">
+            <!-- <span class="material-icons-outlined">south_east</span> -->
+        </form>
+        </div>
+        
+    </body>
+</html>

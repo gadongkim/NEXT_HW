@@ -29,6 +29,7 @@ def extract_info(movie_list) :
         }
 
         final_result.append(movie_info)
+        # 꼭 for문 안에 담겨 있어야해
 
     return final_result
 

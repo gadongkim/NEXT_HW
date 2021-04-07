@@ -1,0 +1,42 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+}
+
+.bg{
+    display: flex;
+    position: relative;
+}
+
+p{
+    font-size: 80px;
+    color : black;
+    font-family: inherit;
+}
+
+.output{
+    margin : 30px 30px;
+    position : absolute;
+    width: 800px;
+    height: 250px;
+    margin-top: 480px;
+    margin-left : 600px;
+    text-align: right;
+}
+
+.input{
+    margin : 30px 30px;
+    position : absolute;
+    width: 550px;
+    height: 250px;
+}
+

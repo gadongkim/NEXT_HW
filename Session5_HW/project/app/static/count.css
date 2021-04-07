@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    box-sizing: border-box; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+}
+
+.bg{
+    display: flex;
+    position: relative;
+}
+
+.input{
+    margin : 30px 30px;
+    position : absolute;
+}
+
+.area{
+    outline: none;
+    overflow: auto;
+    width: 550px;
+    height: 250px;
+    box-sizing: border-box;
+    padding: 5px; 
+    /* border : solid 1px black; */
+    border : none;
+    background-color: transparent;
+    font-size: 80px;
+    color : black;
+    font-family: inherit;
+}
+
+textarea::placeholder {
+    color: black;
+    font-size: 80px;
+  }
+
+  .button{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 120px;
+    border-radius: 50%;
+    left : 100%;
+    width : 200px;
+    height : 200px;
+}
