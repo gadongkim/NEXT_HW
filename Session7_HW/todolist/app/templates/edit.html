@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'edit.css'%}"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "bg">
+        <img class ="img" src = "https://user-images.githubusercontent.com/69626443/117586470-67fd7d80-b153-11eb-9a73-01c3485f2831.png" height = "15%">
+    </div>
+
+    <form class = "input" action="" method="post">
+        {% csrf_token %}
+        <div class ="format">
+            <label for="title">제목</label>
+            <input class ="area" type="text" id="title" name="title" value="{{ post.title }}">
+        </div>
+        <p>---------------------------------------------</p>
+        <div class ="format">
+            <label for="content">내용</label>
+            <textarea class ="area" name="content" id="content" cols="30" rows="8" >{{ post.content }}</textarea>
+        </div>
+        <p>---------------------------------------------</p>
+        <div class="format">
+            <label for="date">Due-Date</label>
+            <input class ="area" type="date" id="date" name="date" value="{{ post.date }}">
+        </div>
+        <p>---------------------------------------------</p>
+        <button class ="button" type="submit">     Edit</button>
+        </div>
+        
+    </form>
+    <!-- 전부 폼 태그 안에 포함되어있어야 합니당 -->
+</body>
+</html>

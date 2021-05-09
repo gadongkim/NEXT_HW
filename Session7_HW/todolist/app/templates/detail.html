@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 느낌표 탭!!! -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'edit.css'%}"/>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class = "bg">
+        <img class ="img" src = "https://user-images.githubusercontent.com/69626443/117586470-67fd7d80-b153-11eb-9a73-01c3485f2831.png" height = "15%">
+    </div>
+
+    <div class = "input">
+        <div class="format">
+            <p class ="bold">Title</p>
+            <p>{{ post.title }}</p>
+            <br>
+        </div>
+        <p>---------------------------------------------</p>
+        <div class="format">
+            <p class ="bold">Contents</p>
+            <p>{{ post.content }}</p>
+            <br>
+        </div>
+        <p>---------------------------------------------</p>
+        <div class="format">
+            <p class ="bold" >Date</p>
+            <p>{{ post.date }}</p>
+            <br>
+        </div>
+        <p>---------------------------------------------</p>
+    <div class="format">  
+        <br>
+        <div class ="button">
+            <a class ="bold" href="{% url 'home' %}">Home</a>
+            <br>
+            <a class ="bold" href="{% url 'edit' post.pk %}">Edit</a>
+            <br>
+            <a class ="bold" href="{% url 'delete' post.pk %}">Delete</a>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>

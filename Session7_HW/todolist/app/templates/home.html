@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'home.css'%}"/>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <div class = "bg">
+        <img class ="img" src = "https://user-images.githubusercontent.com/69626443/117586470-67fd7d80-b153-11eb-9a73-01c3485f2831.png" height = "15%">
+    </div>
+
+    <div class = "input">
+        <p>ORDER #8853 FOR GAHYUN KIM</p>
+        <p>May 10, 2021</p>
+        <br>
+        <p>---------------------------------------------</p>
+        <br>
+        <ul class ="list">
+            {% for post in posts %}
+            <!-- 파이썬 변호는 중괄호가 두개 -->
+            <li class ="item">
+                <a class ="bold" href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+                <p class ="date" id="due">{{ post.date }}</p>     
+            </li>
+            <br>
+            {% endfor %}
+        </ul>
+        <p>---------------------------------------------</p>
+        <br>
+        <div class ="item">
+        <p>total</p>
+        <!-- <p>{{ post.count }}</p> -->
+        </div>
+        <br>
+        <p>---------------------------------------------</p>        
+        <br>
+        <a class = "bold" href="{% url 'new' %}">Add +</a>
+    </div>
+
+</html>

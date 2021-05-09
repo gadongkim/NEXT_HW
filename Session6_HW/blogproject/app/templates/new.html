@@ -1,0 +1,9 @@
+<body>
+    <form action ="" method ="post">
+        {% csrf_token %}
+        <input name="title" placeholder="제목">
+        <br>
+        <textarea name="content" cols ="30" rows="10" placeholder="내용"></textarea>
+        <button type="submit">저장하기</button>
+    </form>
+</body>
