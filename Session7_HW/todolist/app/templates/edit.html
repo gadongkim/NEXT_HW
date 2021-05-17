@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap" rel="stylesheet">
+{% extends 'base.html' %}
+{% block content %}
+
     {% load static %}
     <link rel="stylesheet" type ="text/css" href ="{% static 'edit.css'%}"/>
-    <title>Document</title>
-</head>
-<body>
-    <div class = "bg">
+
+    <div class = "bg"> 
         <img class ="img" src = "https://user-images.githubusercontent.com/69626443/117586470-67fd7d80-b153-11eb-9a73-01c3485f2831.png" height = "15%">
     </div>
 
@@ -37,5 +30,4 @@
         
     </form>
     <!-- 전부 폼 태그 안에 포함되어있어야 합니당 -->
-</body>
-</html>
+{% endblock content %}

@@ -55,15 +55,22 @@ body{
     border: none;
     background-color: transparent;
     color: black;
-    text-align: left;
-    margin-left:235px;
+    /* text-align: left; */
+    /* margin-left:235px; */
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-end; */
 
 }
 
 .bold{
     font-weight: 600;
+
 }
+
+.comments{
+    display: inline;
+    flex-direction: row;
+
+}    

@@ -1,0 +1,31 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}?v=0.1">
+  <title>My Blog</title>
+</head>
+<body>
+  <div class="nav-bar">
+    <a class="nav-item" href="{% url 'home' %}">HOME</a>
+    {% if user.is_authenticated %}
+    <a class="nav-item">안녕하세요, {{ user.username }}님</a>
+    <a class="nav-item" href ="{% url 'logout' %}">로그아웃</a>
+    {% else %}
+    <a class="nav-item" href ="{% url 'login' %}">로그인</a>
+    <a class="nav-item" href="{% provider_login_url 'kakao' %}">카카오로그인</a>
+    <a class="nav-item" href="{% url 'signup' %}">회원가입</a>
+    {% endif %}
+
+    {% comment %} <div class = "bg">
+        <img class ="img" src = "https://user-images.githubusercontent.com/69626443/117586470-67fd7d80-b153-11eb-9a73-01c3485f2831.png" height = "15%">
+    </div> {% endcomment %}
+  </div>
+  {% block content %}
+  {% endblock content %}
+</body>
