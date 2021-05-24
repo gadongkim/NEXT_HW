@@ -1,0 +1,10 @@
+.now{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-weight: 600;
+    font-size: 30px;
+    color : black;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
