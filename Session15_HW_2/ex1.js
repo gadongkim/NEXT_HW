@@ -6,12 +6,14 @@ $ulElement.addEventListener("click", (e) => {
     if($target.classList.contains('close')){
         const $parentTarget = $target.parentElement.parentElement;
         $parentTarget.style.display = "none";
-        console.dir($parentTarget)
-        const deleteItem = $parentTarget.innerHTML;
-        deleteTodoList('todolist', deleteItem);
+        const deleteParent = $parentTarget.children[1]
+        const deleteItem = deleteParent.children[0].innerText
+        console.log(deleteItem)
+        deleteTodoList('todolist', deleteItem)
     }
     $target.parentElement.classList.toggle('checked');
 })
+
 
 //리스트 추가
 function newElement() {
@@ -46,9 +48,11 @@ function init() {
 
         $ulElement.insertAdjacentHTML('beforeend',`
         <li>
+        <div class ="content">
         <img class ="img" src="circle/r${x}.png" style="width:300px">
             <span class ="text">${inputValue}</span>
             <span class="close">&#215;</span>
+        </div>
         </li>
         `)
     }
