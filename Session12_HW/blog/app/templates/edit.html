@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'edit.css'%}"/>
+
+    <form class = "input" action="" method="post">
+        {% csrf_token %}
+        <div class ="title_format">
+            <!-- <label for="title">제목</label> -->
+            <input class ="area" type="text" id="title" name="title" value="{{ post.title }}">
+        </div>
+      
+        <div class ="content_format">
+            <!-- <label for="content">내용</label> -->
+            <textarea class ="area" name="content" id="content" cols="30" rows="8" >{{ post.content }}</textarea>
+        </div>
+
+        <div class="date_format">
+            <!-- <label for="date">Due-Date</label> -->
+            <input class ="area" type="date" id="date" name="date" value="{{ post.date }}">
+        </div>
+        <button class ="button" type="submit">Edit</button>
+
+    </form>
+
+{% endblock content %}

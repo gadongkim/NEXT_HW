@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'home.css'%}"/>
+
+    <div class ="input">
+        <p>Yours</p>
+        <ul class="list">
+            {% for post in posts %}
+            <li class="item">
+                {% if user.is_authenticated and comment.author.pk == user.pk %}
+                <a class ="bold" href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+                <p class ="date" id="due">{{ post.date }}</p> 
+                {% endif%}
+            </li>
+            {% endfor %}
+
+
+        <p>Others</p>
+        <ul class="list">
+        {% for post in posts %}
+        <li class="item">
+            {% if user.is_authenticated and comment.author.pk != user.pk %}
+            <a class ="bold" href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+            <p class ="date" id="due">{{ post.date }}</p> 
+            {% endif%}
+        </li>
+        {% endfor %}
+        
+    </div>
+
+{% endblock content %}

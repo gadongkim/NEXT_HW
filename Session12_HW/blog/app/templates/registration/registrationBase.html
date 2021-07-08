@@ -1,0 +1,31 @@
+{% load static %}
+<!-- {% load socialaccount %} -->
+<!-- {% providers_media_js %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'registration_base.css' %}?v=0.1">
+  {% block css %}
+  {% endblock css %}
+  <title>My Blog</title>
+</head>
+
+<body>
+  <div class="background">
+    <!-- 전체박스 -->
+    <div class="contatinerbox">
+        <div class = "bg"> 
+            <img class ="img" src = "https://user-images.githubusercontent.com/69626443/119768921-7b9b3900-bef4-11eb-879e-744b93e9def9.png" height = "15%">
+        </div>
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock content %}
+  <!-- <div class="contatiner">
+  </div> -->
+
+</body>

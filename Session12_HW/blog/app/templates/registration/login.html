@@ -1,0 +1,22 @@
+{% extends 'registrationBase.html' %}
+{% block content %}
+      
+<p class="Signin">Sign in</p>
+{% if error %}
+<button class ="signin" type="submit">Error</button>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="user_box">
+        <input type="text" name="username" placeholder="이름">
+        <input type="password" name="password" placeholder="비밀번호">
+    </div>
+    <div class="submit_box">
+        <button class ="signin" type="submit">Sign in</button>
+        <p class="signup_text">Don't you have an account yet?</p>
+        <button class ="signup" type="submit">Sign up</button>
+    </div>
+</form>
+
+{% endblock content %}

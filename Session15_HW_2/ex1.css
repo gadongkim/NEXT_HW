@@ -1,0 +1,221 @@
+/* Include the padding and border in an element's total width and height */
+
+@font-face {
+
+  src : url("../Trap-SemiBold.otf"); 
+  font-family: "trap";
+
+}
+* {
+    box-sizing: border-box;
+    /* background-color: #1c1c1c; */
+    /* background-color: #fafafa; */
+}
+
+body{
+  background-color: #1c1c1c;
+}
+  
+  /* Remove margins and padding from the list */
+  ul {
+    /* margin: 0;
+    padding: 0; */
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    height:400px;
+    margin-top:5%;
+    overflow-y:hidden;
+    -ms-overflow-style: none; 
+  }
+
+  .ul::-webkit-scrollbar{
+    display:none;
+    width: 0 ;
+  }
+
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding-left:20px;
+    /* padding: 12px 8px 12px 40px; */
+    font-size: 22px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .img{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    position: relative;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    opacity:0.6;
+  }
+  
+  /* When clicked on, strike out text */
+  /* ul li.checked {
+    text-decoration: line-through;
+    opacity: 0.6;
+  } */
+  
+  ul li.checked{
+    text-decoration: line-through; 
+    opacity: 0.6;
+  }
+  /* Add a "checked" mark when clicked on */
+  /* ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  } */
+
+  .content{
+    position: absolute;
+    left:35%;
+    top:30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    /* z-index : 1; */
+    color:black;
+
+    /* left:100%;
+    top:100%;
+    width:100%; */
+  }
+  .text{
+    padding-bottom:40px;
+  }
+  /* Style the close button */
+  .close {
+    /* position: absolute; */
+    font-weight: bold
+  }
+  
+  .close:hover {
+    color: white;
+  }
+  
+  /* Style the header */
+  .header {
+    padding: 80px 40px;
+    color: white;
+    text-align: left;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border-right:none;
+    border-left: none;
+    border-top: none;
+    border-bottom: white 1px solid;
+    background-color: transparent;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    background-color: none;
+  }
+
+  input:focus {outline:none;}
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    /* float: left; */
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .addBtn:hover {
+    color: #bbb;
+  }
+
+  .inputBox {
+    display: flex;
+  }
+
+#modalBtn{
+  color:white;
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+  text-align: left;
+  font-weight: bold;
+  font-family: "trap";
+  padding:50 0 50 0px;
+  }
+
+  .modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+#modalx {
+    cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  #modalx:hover,
+  #modalx:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,45 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}?v=0.1">
+  {% block css %}
+  {% endblock css %}
+  <title>My Blog</title>
+</head>
+
+<body>
+  <div class="background">
+    <!-- 전체박스 -->
+    <div class="contatinerbox">
+      <!-- 내브바 -->
+      <div class="nav-bar">
+        <img src="https://user-images.githubusercontent.com/69626443/119768932-7fc75680-bef4-11eb-8ee5-4e6f801e3ca4.png" alt="">
+        <a class="nav-item" href="{% url 'home' %}">Home</a>
+        {% if user.is_authenticated %}
+        <a class="nav-item" href="{% url 'new' %}">New post</a>
+        <a class="nav-item" href="{% url 'home' %}">Setting</a>
+        {% else %}
+        <!-- 페이지 넘어갈 수 없음(login.html에 머무르게) -->
+        {% endif %}
+      </div>
+
+      
+    </div>
+
+
+  </div>
+  
+
+
+
+  <div class="contatiner">
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>

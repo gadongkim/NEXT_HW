@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'edit.css'%}"/>
+
+    
+    <form class = "input" action="" method="post">
+        {% csrf_token %}
+            <div class="title_format">
+                <!-- <label for="title">Title</label> -->
+                <input class ="area" type="text" id="title" name="title" placeholder=".">
+            </div>
+            <div class="content_format">
+                <!-- <label for="content">Contents</label> -->
+                <textarea class ="area" name="content" id="content" cols="30" rows="8" placeholder="."></textarea>
+            </div>
+
+            <div class="date_format">
+                <!-- <label for="date">date</label> -->
+                <input class ="area" type="date" id="date" name="date" placeholder="마감 기한">
+            </div>
+            <button class ="button" type="submit">Submit</button>
+
+    </form>
+
+{% endblock content %}

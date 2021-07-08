@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'edit.css'%}"/>
+
+    
+    <div class = "input">
+        <div class="title_format">
+            <!-- <p class ="bold">Title</p> -->
+            <p>{{ post.title }}</p>
+        </div>
+
+        <div class="content_format">
+            <!-- <p class ="bold">Contents</p> -->
+            <p>{{ post.content }}</p>
+        </div>
+
+        <div class="date_format">
+            <!-- <p class ="bold" >Date</p> -->
+            <p>{{ post.date }}</p>
+        </div>
+        
+        <!-- 댓글남기기 -->
+        {% if user.is_authenticated %}
+        <form class ="comments" method="POST">
+            {% csrf_token %}
+            <input class = "area" type="text" name ="content" placeholder="comment">
+            <button class = "button" type="submit"></button>
+        </form>
+        {% endif %}
+        <!-- 댓글 -->
+            {% for comment in post.comments.all %}
+            <li>{{ comment.content }}
+                {% if user.is_authenticated and comment.author.pk == user.pk %}
+                <a href="{% url 'delete_comment' post.pk comment.pk %}">delete</a></li>
+                {% endif%}
+            {% endfor %}
+
+
+            <br>
+
+            <!-- 수정버튼 -->
+            <div class ="detail_button">
+                {% if user.is_authenticated and post.author.pk == user.pk %}
+                <a class ="bold" href="{% url 'edit' post.pk %}">Edit</a>
+                <a class ="bold" href="{% url 'delete' post.pk %}">Delete</a>
+                {% endif%}
+            </div>
+
+     </div>
+
+{% endblock content %}
