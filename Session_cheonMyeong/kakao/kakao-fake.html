@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <title>카카오 공유 낚시하기</title>
+  </head>
+  <body>
+
+      <div onclick="sendMoneyToFriend(50000)">보내기</div>
+
+  </body>
+  <script>
+    window.Kakao.init('106f50542d02e709696708532cd71cfe')
+
+    function sendMoneyToFriend(amount) {
+      window.Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '',
+          description: `${amount.toLocaleString()}원을 받으세요.`,
+          imageUrl: 'https://bit.ly/3k2j68O',
+          imageWidth: 450,
+          imageHeight: 120,
+          link: {
+            mobileWebUrl: 'http://localhost:5501',
+            webUrl: 'http://localhost:5501',
+          },
+        },
+        buttons: [
+          {
+            title: '받기',
+            link: {
+              mobileWebUrl: 'http://localhost:5501',
+            },
+          },
+        ],
+      })
+    }
+  </script>
+</html>

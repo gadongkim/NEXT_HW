@@ -10,8 +10,6 @@ def home(request):
 
     return render(request, 'home.html', {'posts':posts})
 
-
-@login_required(login_url='/registration/login')
 def new(request):
     if request.method =='POST':
         new_post = Post.objects.create(
@@ -62,42 +60,42 @@ def delete_comment(request, post_pk, comment_pk):
     return redirect('detail', post_pk)
 
 
-def signup(request):
-    if(request.method =='POST'):
-        found_user = User.objects.filter(username=request.POST['username'])
-        if(len(found_user) > 0):
-            error = 'username이 이미 존재합니다'
-            return render(request, 'registration/signup.html', {
-                'error' : error
-                })  
-        new_user = User.objects.create_user(
-            username = request.POST['username'],
-            password = request.POST['password'],
-        )
-        auth.login(request, new_user,
-        backend='django.contrib.auth.backends.ModelBackend') ##회원가입 정상적으로 진행한 뒤에, 자동으로 로그인
-        return redirect('home')
+# def signup(request):
+#     if(request.method =='POST'):
+#         found_user = User.objects.filter(username=request.POST['username'])
+#         if(len(found_user) > 0):
+#             error = 'username이 이미 존재합니다'
+#             return render(request, 'registration/signup.html', {
+#                 'error' : error
+#                 })  
+#         new_user = User.objects.create_user(
+#             username = request.POST['username'],
+#             password = request.POST['password'],
+#         )
+#         auth.login(request, new_user,
+#         backend='django.contrib.auth.backends.ModelBackend') ##회원가입 정상적으로 진행한 뒤에, 자동으로 로그인
+#         return redirect('home')
 
-    return render(request, 'registration/signup.html')
+#     return render(request, 'registration/signup.html')
 
-def login(request):
-    if(request.method =='POST'):
-        found_user = auth.authenticate(
-            username=request.POST['username'],
-            password=request.POST['password']
-        )
-        if(found_user is None):
-            error = '아이디 또는 비밀번호가 틀렸습니다'
-            return render(request, 'registration/login.html', {
-                'error' : error
-                })
-        auth.login(request, found_user,
-            backend='django.contrib.auth.backends.ModelBackend')
-        return redirect(request.GET.get('next', '/'))
+# def login(request):
+#     if(request.method =='POST'):
+#         found_user = auth.authenticate(
+#             username=request.POST['username'],
+#             password=request.POST['password']
+#         )
+#         if(found_user is None):
+#             error = '아이디 또는 비밀번호가 틀렸습니다'
+#             return render(request, 'registration/login.html', {
+#                 'error' : error
+#                 })
+#         auth.login(request, found_user,
+#             backend='django.contrib.auth.backends.ModelBackend')
+#         return redirect(request.GET.get('next', '/'))
     
-    return render(request, 'registration/login.html')
+#     return render(request, 'registration/login.html')
 
-def logout(request):
-    auth.logout(request)
+# def logout(request):
+#     auth.logout(request)
 
-    return redirect('home')
+#     return redirect('home')

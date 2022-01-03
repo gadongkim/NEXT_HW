@@ -74,3 +74,24 @@ function deleteTodoList(key,value) {
 
 init()
 
+var keylist="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
+var temp=''
+
+function generatepass(plength){
+	temp=''
+	for (i=0;i<plength;i++)
+		temp+=keylist.charAt(Math.floor(Math.random()*keylist.length))
+	return temp
+}
+
+function populateform(enterlength){
+	document.frm.output.value=generatepass(enterlength)
+}
+
+function check(){
+	if(temp == document.frm.che.value){
+    showPage()
+		}else{
+		alert('Please Retry');	
+		}
+}

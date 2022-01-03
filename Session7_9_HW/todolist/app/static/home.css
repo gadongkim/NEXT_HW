@@ -9,31 +9,15 @@ a{ text-decoration: none; color: black; }
 
 body{
     display: flex;
+    background-color: black;
     /* align-items: center; */
 }
 
-.bg{
-    background: black;
-width: 1280;
-height : 1080;
-    /* position: relative;
-    display: flex;
-    justify-content: center; */
-}
 
-.img{
-    margin : 0% 0% 0% 6%; 
-    position: relative;
-    height : 15%;
-    /* display: flex;
-    justify-content: center; */
-}
 
 .input{
     position : absolute;
-    /* display: flex; */
     margin : 30px 30px;
-
     margin-top: 240px;
     margin-left : 650px;
     font-size : 11px;

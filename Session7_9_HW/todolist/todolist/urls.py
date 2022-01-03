@@ -22,11 +22,11 @@ from app import views
 
 urlpatterns = [
     # signup
-    path('registration/signup', views.signup, name="signup"),
+    # path('registration/signup', views.signup, name="signup"),
     # login
-    path('', views.login, name="login"),
+    # path('', views.login, name="login"),
     # logout
-    path('registeration/logout', views.logout, name="logout"),
+    # path('registeration/logout', views.logout, name="logout"),
     path('admin/', admin.site.urls),
     # path('accounts/', include('allauth.urls')),
     path('home', views.home, name="home"),
